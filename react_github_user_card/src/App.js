@@ -8,6 +8,7 @@ class App extends Component
   state = {
     img: '',
     username: '',
+    location: '',
     profile: '',
     followers: [],
     followersCount: 0,
