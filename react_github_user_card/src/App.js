@@ -9,8 +9,9 @@ class App extends Component
     img: '',
     username: '',
     profile: '',
-    followers: 0,
-    following: 0,
+    followers: [],
+    followersCount: 0,
+    followingCount: 0,
     bio: ''
   }
   componentDidMount()
