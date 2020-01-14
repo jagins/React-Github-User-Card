@@ -5,6 +5,14 @@ import './App.css';
 
 class App extends Component
 {
+  state = {
+    img: '',
+    username: '',
+    profile: '',
+    followers: 0,
+    following: 0,
+    bio: ''
+  }
   componentDidMount()
   {
 
@@ -14,7 +22,7 @@ class App extends Component
   {
 
   }
-  
+
   render()
   {
     return (
