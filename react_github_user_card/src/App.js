@@ -11,14 +11,20 @@ class App extends Component
     name: '',
     location: '',
     profile: '',
-    followers: [],
     followersCount: 0,
     followingCount: 0,
     bio: ''
   }
   componentDidMount()
   {
-
+    axios.get('https://api.github.com/users/jagins')
+    .then(response =>{
+      this.setState({
+        img: response.data.avatar_url
+        
+      });
+    })
+    .catch()
   }
 
   fetch = () =>
