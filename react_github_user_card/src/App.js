@@ -20,11 +20,16 @@ class App extends Component
     axios.get('https://api.github.com/users/jagins')
     .then(response =>{
       this.setState({
-        img: response.data.avatar_url
-        
+        img: response.data.avatar_url,
+        username: response.data.login,
+        name: response.data.name,
+        location: response.data.location,
+        profile: response.data.html_url,
+        followersCount: response.data.followers,
+        followingCount: response.data.following
       });
     })
-    .catch()
+    .catch(err => console.log('Something went wrong: ', err));
   }
 
   fetch = () =>
@@ -36,6 +41,14 @@ class App extends Component
   {
     return (
       <div className="App">
+        <Card 
+          img={this.state.img}
+          username={this.state.username}
+          name={this.state.name}
+          location={this.state.location}
+          profile={this.state.profile}
+          followersCount={this.state.followersCount}
+          followingCount={this.state.followingCount}/>
       </div>
     );
   }

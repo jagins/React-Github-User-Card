@@ -11,7 +11,7 @@ function Card(props) {
                 <p>{location}</p>
                 <p>Profile: <a href={profile} target='_blank'>{profile}</a></p>
                 <p>Followers: {followersCount}</p>
-                <p>Following: {followingCount}}</p>
+                <p>Following: {followingCount}</p>
             </div>
         </div>
     );
