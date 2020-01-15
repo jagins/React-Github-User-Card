@@ -5,14 +5,6 @@ import './App.css';
 
 class App extends Component {
   state = {
-    img: '',
-    username: '',
-    name: '',
-    location: '',
-    profile: '',
-    followersCount: 0,
-    followingCount: 0,
-    bio: '',
     cardArray: [],
     followerArray: []
   }
@@ -39,11 +31,10 @@ class App extends Component {
   }
 
   createFollowerCard = () => {
-    let followerLinks = [];
     axios.get('https://api.github.com/users/jagins/followers')
       .then(response => {
         this.setState({ followerArray: response.data });
-        followerLinks = this.state.followerArray.map(person => {
+        const followerLinks = this.state.followerArray.map(person => {
           return person.url;
         })
         followerLinks.forEach(el => {
